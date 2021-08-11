@@ -1,0 +1,50 @@
+// SOLUTION 1 : WITH AN ARRAY 
+
+ALGORITHM sum_distincts_elements
+VAR
+    tab1, tab2: ARRAY_OF_INTEGERS[10];
+    i,j,com_el, sum:= 0: INTEGER
+BEGIN
+    FOR i FROM 0 TO tab1.length DO
+        FOR j FROM 0 TO tab2.length DO   
+            IF (tab1[i] <> tab2[j]) THEN
+                sum+= tab2[j];
+            ELSE
+                com_el:= tab1[i];
+            END_IF 
+    END_FOR;
+
+Write("Common elements", com_el);
+Write("Somme distincs element",sum);
+
+END
+
+// ********************************************************************************************************************************
+
+// SOLUTION 2 WITH AN HASH TABLE
+
+ALGORITHM hash_distinct_elements
+VAR
+    htab: HASH TABLE<INTEGER,INTEGER>;
+    tab1, tab2: INTEGER[15]
+    i,j,cum_els sum:=0, : INTEGER;
+
+BEGIN
+    
+    htab.insert(tab1);
+    htab.insert(tab2);
+
+     FOR i FROM 0 TO tab1.length DO
+        FOR j FROM 0 TO tab2.length DO   
+            IF (tab1[i] <> tab2[j]) THEN
+                sum+= htab.get(tab2[j]);
+            ELSE
+                com_el:= htab.get(tab1[i]);
+            END_IF 
+    END_FOR;
+
+Write("Common elements", com_el);
+Write("Somme distincs element",sum);
+    
+END
+

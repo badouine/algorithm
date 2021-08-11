@@ -1,0 +1,86 @@
+// FUNCTION FOR N ELEMENT IF IN ELEMENT VECTOR
+FUNCTION check_element_vectors(v,n) : INTEGER
+VAR
+    CONST Deg:=30 INTEGER;
+    v,n,supborn, infborn: INTEGER;
+BEGIN
+    DO 
+        Write("Empty valor")
+    WHILE (n==0 OR n <> V OR infborn > supborn);
+
+        return n;
+
+    END_WHILE
+END       
+
+
+// PROCEDURE BORN
+
+PROCEDURE born(n: INTEGER, supborn,infborn: INTEGER, VAR TAB1,TAB2: ARRAY_OF INTEGER) ;
+
+VAR 
+    i,j: INTEGER;
+        FOR i=1 FROM TAB1 TO n STEP 1  DO
+            IF (TAB[i]==1) THEN
+                infborn == TAB[i] ;
+            else IF (TAB[i]==n) THEN
+                supborn == TAB[i];
+          
+            END_IF
+
+            FOR j FROM TAB2 TO n STEP 1 DO
+                IF (TAB[j]==1) THEN
+                    infborn == TAB[j] ;
+                else IF (TAB[j]==n) THEN
+                    supborn == TAB[j];
+                  
+                END_IF
+        END_FOR
+        
+
+// PROCEDURE FOR scalar
+
+
+PROCEDURE scalar(n: INTEGER, VAR TAB1,TAB2: ARRAY_OF INTEGER)
+
+VAR
+    CONST prod_fulfil:= 0;
+    i,scalar:=0 INTEGER;
+BEGIN
+    scalar:= TAB1[i] * TAB2[i] * COS(Deg);
+        IF (scalar==prod_fulfil) THEN
+            Write(TAB1 "et" TAB2 "Are vectors");
+        ELSE 
+            Write(TAB1 "et" TAB2 "Are not vectors")
+
+ALGORITHM fulfil_product
+VAR
+    TAB1: ARRAY_OF INTEGER[25];
+    TQB2: ARRAY_OF INTEGER[70];
+    i,j,n: INTEGER;
+BEGIN
+    check_element_vectors();
+
+    born(n,TAB2,TAB1,infborn,supborn);
+
+    scalar(n,TAB2,TAB1);
+
+END
+/**
+
+Objective
+At this checkpoint, you are demanded to write an algorithm that fulfill the following: 
+
+Name: Dot product
+Description:
+Write a procedure, called dot_product which calculates in the variable ps, the dot(scalar) product of v1 and v2 (v1 and v2 are vectors of IR)
+Write an algorithm which determines, for n pairs of given vectors, whether two vectors of given IR are orthogonal, by calling the procedure defined in the previous question. The dot product of two orthogonal vectors is zero.
+Modify the previous algorithm if you use a dot_product function instead of a procedure.
+Instructions
+While creating your algorithm, you should: 
+
+Use array for presenting the vector.
+Use nested loop (a loop inside another)
+Use different types of passing parameters
+
+*/
