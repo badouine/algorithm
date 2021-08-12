@@ -1,7 +1,7 @@
 ALGORITHM read_sentence;
 VAR
     phrase:= "Hello nice to meet you.";
-    i,j,number_word:=0 ,number_caractere:=0 : INTEGER; 
+    i,j,number_word:=0 ,number_caractere:=0 , number_vowels:=0 : INTEGER; 
     space:= "" : STRING ;
     point:= "." CONST;
 BEGIN
@@ -12,16 +12,19 @@ BEGIN
     
         FOR i FROM j IN phrase DO
             IF ([j]:== space) THEN
-                number_word+:= [i];
+                number_word+= [i];
             END IF ;
             IF ([j] <> point) THEN
                 number_caractere:=  number_caractere + j;
             END_IF
             IF ([i]:== point) THEN
                 break;
+                number_vowels+= [j];
         END FOR ;
 
         Write("Number Word : " number_word);
         Write("Number Caractere : " number_caractere:);
+        Write("Number vowels : " number_vowels:);
+
 
 END
